@@ -95,9 +95,9 @@
 .case, .strap{
     width: 150px;
 }
-input[type="radio"][id^="casebtn1"] {
+/* input[type="radio"][id^="casebtn1"] {
     display: none;
-}
+} */
 .bottombtn {
     margin-top: 600px;
     margin-left: 1350px;
@@ -120,8 +120,13 @@ input[type="radio"][id^="casebtn1"] {
     color: red;
     font-size: 25px;
 }
-#casebtn1:checked ~ .watchcase {
-    background-image: url(./cases/case2.png);
+#casebtn1:checked  ~ .watchbox {
+    background: url(./straps/strap1.png);
+    position: absolute;
+}
+#strapbtn1:checked  ~ .watchbox {
+    background: url(./cases/case1.png);
+    position: absolute;
 }
 @keyframes type {
     from {
