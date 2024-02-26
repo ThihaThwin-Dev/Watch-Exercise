@@ -27,7 +27,7 @@
     border-right: 5px solid black;
     white-space: nowrap;
     overflow: hidden;
-    animation: type 3s steps(50);
+    animation: type 3s steps(30), cursor .4s step-end infinite alternate;
 }
 .firstline {
     width: 563px;
@@ -45,25 +45,46 @@
     position: absolute;
 }
 .watchbox {
-    background-color: transparent;
-    display: grid;
+    position: absolute;
+    z-index: 1;
+    height: 500px;
+    text-align: center;
+    width: 500px;
+    margin-left: -550px;
+    top: 0px;
+    border-radius: 15px;
+    transition-duration: 1.5s;
+    box-shadow: 12px 12px 11px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.watchbox2 {
     position: absolute;
     height: 500px;
     text-align: center;
     width: 500px;
-    margin-left: 100px;
+    margin-left: -550px;
+    top: 0px;
     border-radius: 15px;
+    transition-duration: 1.5s;
     box-shadow: 12px 12px 11px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .rightbox {
     position: absolute;
     margin-left: 650px;
     font-weight: 700;
 }
+.strapicon img {
+    margin-left: 20px;
+    width: 100px;
+}
+.caseicon img {
+    margin-left: 20px;
+    width: 100px;
+}
 .cases {
     font-size: 20px;
     position: relative;
-    width: 800px;
+    width: 650px;
     margin-top: 100px;
 }
 .cases::after {
@@ -71,33 +92,34 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 800px;
+    width: 650px;
     height: 3px;
     background-color: black;
 }
 .straps {
     font-size: 20px;
     position: relative;
-    width: 800px;
+    width: 650px;
+    margin-top: 20px;
 }
 .straps::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 800px;
+    width: 650px;
     height: 3px;
     background-color: black;
 }
 .case, .strap{
     width: 150px;
 }
-/* input[type="radio"][id^="casebtn1"] {
+.strapbtn, .casebtn {
     display: none;
-} */
+}
 .bottombtn {
-    margin-top: 600px;
-    margin-left: 1350px;
+    margin-top: 500px;
+    margin-left: 1250px;
 }
 .savebtn {
     width: 70px;
@@ -117,15 +139,53 @@
     color: red;
     font-size: 25px;
 }
-#casebtn1:checked  ~ .watchbox {
+#strapbtn1:checked  ~ .watchbox2 {
     background-image: url(./straps/strap1.png);
-    background-repeat: no-repeat;
+    position: absolute;
 }
-#strapbtn1:checked  ~ .watchbox {
+#strapbtn2:checked  ~ .watchbox2 {
     background-image: url(./straps/strap2.png);
+    position: absolute;
+}
+#strapbtn3:checked  ~ .watchbox2 {
+    background-image: url(./straps/strap3.png);
+    position: absolute;
+}
+#strapbtn4:checked  ~ .watchbox2 {
+    background-image: url(./straps/strap4.png);
+    position: absolute;
+}
+#strapbtn5:checked  ~ .watchbox2 {
+    background-image: url(./straps/strap5.png);
+    position: absolute;
+}
+#casebtn1:checked ~ .watchbox {
+    background-image: url(./cases/case1.png);
+    position: absolute;
+}
+#casebtn2:checked ~ .watchbox {
+    background-image: url(./cases/case2.png);
+    position: absolute;
+}
+#casebtn3:checked ~ .watchbox {
+    background-image: url(./cases/case3.png);
+    position: absolute;
+}
+#casebtn4:checked ~ .watchbox {
+    background-image: url(./cases/case4.png);
+    position: absolute;
+}
+#casebtn5:checked ~ .watchbox {
+    background-image: url(./cases/case5.png);
+    position: absolute;
 }
 @keyframes type {
     from {
         width: 0;
+    }
+}
+@keyframes cursor {
+    50% {
+        border-color: transparent;
     }
 }
