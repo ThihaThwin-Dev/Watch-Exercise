@@ -41,7 +41,12 @@
 .mainbox {
     position: absolute;
 }
+.watchbox background {
+    position: absolute;
+}
 .watchbox {
+    background-color: transparent;
+    display: grid;
     position: absolute;
     height: 500px;
     text-align: center;
@@ -49,14 +54,6 @@
     margin-left: 100px;
     border-radius: 15px;
     box-shadow: 12px 12px 11px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.watchcase {
-    position: absolute;
-    left: 5px;
-}
-.watchstrap {
-    position: absolute;
-    left: 5px;
 }
 .rightbox {
     position: absolute;
@@ -121,12 +118,11 @@
     font-size: 25px;
 }
 #casebtn1:checked  ~ .watchbox {
-    background: url(./straps/strap1.png);
-    position: absolute;
+    background-image: url(./straps/strap1.png);
+    background-repeat: no-repeat;
 }
 #strapbtn1:checked  ~ .watchbox {
-    background: url(./cases/case1.png);
-    position: absolute;
+    background-image: url(./straps/strap2.png);
 }
 @keyframes type {
     from {
